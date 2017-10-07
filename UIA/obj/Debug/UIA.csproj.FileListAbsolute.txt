@@ -96,3 +96,4 @@ C:\Users\ShanMen\source\repos\UIA\UIA\bin\ExpressiveAnnotations.MvcUnobtrusive.d
 C:\Users\ShanMen\source\repos\UIA\UIA\bin\ExpressiveAnnotations.xml
 C:\Users\ShanMen\source\repos\UIA\UIA\bin\ExpressiveAnnotations.MvcUnobtrusive.xml
 C:\Users\ShanMen\source\repos\UIA\UIA\bin\DevOne.Security.Cryptography.BCrypt.dll
+C:\Users\ShanMen\source\repos\UIA\UIA\obj\Debug\UIA.csprojResolveAssemblyReference.cache
