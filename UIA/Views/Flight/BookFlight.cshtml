@@ -22,19 +22,19 @@
                     </div>
                     <div class="form-group">
                         @Html.LabelFor(m => m.Flight.Destination)
-                        @Html.TextBoxFor(m => m.Flight.Destination, new {@class = "form-control", disabled = "true"})
+                        @Html.TextBoxFor(m => m.Flight.Destination, new {@class = "form-control input-sm", disabled = "true"})
                     </div>                    
                     <div class="form-group">
                         @Html.LabelFor(m => m.Flight.DepartureTime)
-                        @Html.TextBoxFor(m => m.Flight.DepartureTime, new {@class = "form-control", disabled = "true"})
+                        @Html.TextBoxFor(m => m.Flight.DepartureTime, new {@class = "form-control input-sm", disabled = "true"})
                     </div>       
                     <div class="form-group">
                         @Html.LabelFor(m => m.Flight.ArrivalTime)
-                        @Html.TextBoxFor(m => m.Flight.ArrivalTime, new {@class = "form-control", disabled = "true"})
+                        @Html.TextBoxFor(m => m.Flight.ArrivalTime, new {@class = "form-control input-sm", disabled = "true"})
                     </div> 
                     <div class="form-group">
                         @Html.LabelFor(m => m.SeatsSelected)
-                        @Html.TextBoxFor(m => m.SeatsSelected, new {@class = "form-control", @readonly = true, id = "selectedSeatTextbox" })
+                        @Html.TextBoxFor(m => m.SeatsSelected, new {@class = "form-control input-sm", @readonly = true, id = "selectedSeatTextbox" })
                     </div>
                     <div class="form-group">
                         @Html.LabelFor(m => m.Flight.Price)
