@@ -104,7 +104,7 @@ namespace UIA.Controllers
             db.SaveChanges();
 
 
-            return View(registerViewModel);
+            return RedirectToAction("Login", "Account");
         }
     }
 }
