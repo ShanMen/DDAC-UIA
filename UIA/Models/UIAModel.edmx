@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="UIAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Booking">
           <Key>
             <PropertyRef Name="Id" />
@@ -34,7 +34,7 @@
           <Property Name="Password" Type="nvarchar" MaxLength="250" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'UIA.dbo.ListAllBooking' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'ddac-uia.dbo.ListAllBooking' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ListAllBooking">
           <Key>
             <PropertyRef Name="Seat" />
@@ -59,7 +59,7 @@ warning 6002: The table/view 'UIA.dbo.ListAllBooking' does not have a primary ke
           <Property Name="DepartureTime" Type="datetime" Nullable="false" />
           <Property Name="Price" Type="money" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Booking__FlightI__3A4CA8FD">
+        <Association Name="FK__Booking__FlightI__4E88ABD4">
           <End Role="Flight" Type="Self.Flight" Multiplicity="1" />
           <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
           <ReferentialConstraint>
@@ -71,7 +71,7 @@ warning 6002: The table/view 'UIA.dbo.ListAllBooking' does not have a primary ke
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Booking__UserId__18EBB532">
+        <Association Name="FK__Booking__UserId__4D94879B">
           <End Role="User" Type="Self.User" Multiplicity="1" />
           <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
           <ReferentialConstraint>
@@ -83,7 +83,7 @@ warning 6002: The table/view 'UIA.dbo.ListAllBooking' does not have a primary ke
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="UIAModelStoreContainer">
+        <EntityContainer Name="ModelStoreContainer">
           <EntitySet Name="Booking" EntityType="Self.Booking" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Flight" EntityType="Self.Flight" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
@@ -101,11 +101,11 @@ warning 6002: The table/view 'UIA.dbo.ListAllBooking' does not have a primary ke
     [ListAllBooking].[Price] AS [Price]
     FROM [dbo].[ListAllBooking] AS [ListAllBooking]</DefiningQuery>
           </EntitySet>
-          <AssociationSet Name="FK__Booking__FlightI__3A4CA8FD" Association="Self.FK__Booking__FlightI__3A4CA8FD">
+          <AssociationSet Name="FK__Booking__FlightI__4E88ABD4" Association="Self.FK__Booking__FlightI__4E88ABD4">
             <End Role="Flight" EntitySet="Flight" />
             <End Role="Booking" EntitySet="Booking" />
           </AssociationSet>
-          <AssociationSet Name="FK__Booking__UserId__18EBB532" Association="Self.FK__Booking__UserId__18EBB532">
+          <AssociationSet Name="FK__Booking__UserId__4D94879B" Association="Self.FK__Booking__UserId__4D94879B">
             <End Role="User" EntitySet="User" />
             <End Role="Booking" EntitySet="Booking" />
           </AssociationSet>
@@ -114,7 +114,7 @@ warning 6002: The table/view 'UIA.dbo.ListAllBooking' does not have a primary ke
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="UIAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Booking">
           <Key>
             <PropertyRef Name="Id" />
@@ -123,8 +123,8 @@ warning 6002: The table/view 'UIA.dbo.ListAllBooking' does not have a primary ke
           <Property Name="UserId" Type="Int32" Nullable="false" />
           <Property Name="FlightId" Type="Int32" Nullable="false" />
           <Property Name="Seat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Flight" Relationship="Self.FK__Booking__FlightI__3A4CA8FD" FromRole="Booking" ToRole="Flight" />
-          <NavigationProperty Name="User" Relationship="Self.FK__Booking__UserId__18EBB532" FromRole="Booking" ToRole="User" />
+          <NavigationProperty Name="Flight" Relationship="Self.FK__Booking__FlightI__4E88ABD4" FromRole="Booking" ToRole="Flight" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Booking__UserId__4D94879B" FromRole="Booking" ToRole="User" />
         </EntityType>
         <EntityType Name="Flight">
           <Key>
@@ -136,7 +136,7 @@ warning 6002: The table/view 'UIA.dbo.ListAllBooking' does not have a primary ke
           <Property Name="DepartureTime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ArrivalTime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-          <NavigationProperty Name="Bookings" Relationship="Self.FK__Booking__FlightI__3A4CA8FD" FromRole="Flight" ToRole="Booking" />
+          <NavigationProperty Name="Bookings" Relationship="Self.FK__Booking__FlightI__4E88ABD4" FromRole="Flight" ToRole="Booking" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -145,7 +145,7 @@ warning 6002: The table/view 'UIA.dbo.ListAllBooking' does not have a primary ke
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Bookings" Relationship="Self.FK__Booking__UserId__18EBB532" FromRole="User" ToRole="Booking" />
+          <NavigationProperty Name="Bookings" Relationship="Self.FK__Booking__UserId__4D94879B" FromRole="User" ToRole="Booking" />
         </EntityType>
         <EntityType Name="ListAllBooking">
           <Key>
@@ -171,7 +171,7 @@ warning 6002: The table/view 'UIA.dbo.ListAllBooking' does not have a primary ke
           <Property Name="DepartureTime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Booking__FlightI__3A4CA8FD">
+        <Association Name="FK__Booking__FlightI__4E88ABD4">
           <End Role="Flight" Type="Self.Flight" Multiplicity="1" />
           <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
           <ReferentialConstraint>
@@ -183,7 +183,7 @@ warning 6002: The table/view 'UIA.dbo.ListAllBooking' does not have a primary ke
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Booking__UserId__18EBB532">
+        <Association Name="FK__Booking__UserId__4D94879B">
           <End Role="User" Type="Self.User" Multiplicity="1" />
           <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
           <ReferentialConstraint>
@@ -200,11 +200,11 @@ warning 6002: The table/view 'UIA.dbo.ListAllBooking' does not have a primary ke
           <EntitySet Name="Flights" EntityType="Self.Flight" />
           <EntitySet Name="Users" EntityType="Self.User" />
           <EntitySet Name="ListAllBookings" EntityType="Self.ListAllBooking" />
-          <AssociationSet Name="FK__Booking__FlightI__3A4CA8FD" Association="Self.FK__Booking__FlightI__3A4CA8FD">
+          <AssociationSet Name="FK__Booking__FlightI__4E88ABD4" Association="Self.FK__Booking__FlightI__4E88ABD4">
             <End Role="Flight" EntitySet="Flights" />
             <End Role="Booking" EntitySet="Bookings" />
           </AssociationSet>
-          <AssociationSet Name="FK__Booking__UserId__18EBB532" Association="Self.FK__Booking__UserId__18EBB532">
+          <AssociationSet Name="FK__Booking__UserId__4D94879B" Association="Self.FK__Booking__UserId__4D94879B">
             <End Role="User" EntitySet="Users" />
             <End Role="Booking" EntitySet="Bookings" />
           </AssociationSet>
@@ -214,9 +214,9 @@ warning 6002: The table/view 'UIA.dbo.ListAllBooking' does not have a primary ke
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="UIAModelStoreContainer" CdmEntityContainer="UIAEntities">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="UIAEntities">
           <EntitySetMapping Name="Bookings">
-            <EntityTypeMapping TypeName="UIAModel.Booking">
+            <EntityTypeMapping TypeName="Model.Booking">
               <MappingFragment StoreEntitySet="Booking">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
@@ -226,7 +226,7 @@ warning 6002: The table/view 'UIA.dbo.ListAllBooking' does not have a primary ke
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Flights">
-            <EntityTypeMapping TypeName="UIAModel.Flight">
+            <EntityTypeMapping TypeName="Model.Flight">
               <MappingFragment StoreEntitySet="Flight">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Origin" ColumnName="Origin" />
@@ -238,7 +238,7 @@ warning 6002: The table/view 'UIA.dbo.ListAllBooking' does not have a primary ke
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="UIAModel.User">
+            <EntityTypeMapping TypeName="Model.User">
               <MappingFragment StoreEntitySet="User">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Username" ColumnName="Username" />
@@ -247,7 +247,7 @@ warning 6002: The table/view 'UIA.dbo.ListAllBooking' does not have a primary ke
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ListAllBookings">
-            <EntityTypeMapping TypeName="UIAModel.ListAllBooking">
+            <EntityTypeMapping TypeName="Model.ListAllBooking">
               <MappingFragment StoreEntitySet="ListAllBooking">
                 <ScalarProperty Name="Seat" ColumnName="Seat" />
                 <ScalarProperty Name="BookingId" ColumnName="BookingId" />
