@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+<div>
+    <img src="~/Images/bangkok.jpg" style="max-width: 100%; margin: auto;"/>
+</div>
+
+<div class="container body-content">
+    <div class="jumbotron" style="background-color: black">
+        <h2 style="color: white">Ukraine International Airlines <small>The leading airline</small></h2>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Checked baggage and hand luggage</h3>
+            <p>
+                We provide free baggage allowances for baggage that has size of lower than 158cm ( length + height + width)
+                and a maximum weight of 23kg for Economy Class and 32kg for Business Class.
+            </p>
+        </div>
+        <div class="col-md-6">
+            <h3>Promotion - Smart Fares: Save 30%</h3>
+            <p>
+                <h4>
+                    <a id="aToolTip" href="@Url.Action("BookFlight", "Flight", new {flightId = 1})" style="color: black" data-toggle="tooltip" data-placement="right" data-original-title="View Promotion"> KUL - BKK <del>RM1429</del> RM1000</a>
+                </h4>
+            </p>
+
+        </div>
+       
+    </div>
+</div>
+
+
+<script>
+    $(function () {
+        $('#aToolTip').tooltip({ placement: 'right' });
+    });
+</script>
